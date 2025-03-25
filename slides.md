@@ -36,21 +36,17 @@ zoom: 1.5
 
 ```javascript
 import './style.css';
-import {Map, View} from 'ol';
+import Map from 'ol/Map';
+import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 
 const map = new Map({
   target: 'map',
   layers: [
-    new TileLayer({
-      source: new OSM()
-    })
+    new TileLayer({source: new OSM()})
   ],
-  view: new View({
-    center: [0, 0],
-    zoom: 2
-  })
+  view: new View({center: [0, 0], zoom: 2})
 });
 ```
 
@@ -72,7 +68,7 @@ zoom: 1.5
 
 Standards
 
-GeoJSON,TopoJSON, OGC WMS WFS WMTS, OGC API Tiles, MVT, TileJSON, STAC, GeoTIFF, IIIF, ArcGIS REST, …
+GeoJSON, TopoJSON, OGC WMS WFS WMTS, OGC API Tiles Features, MVT, TileJSON, TMS, XYZ, STAC, GeoTIFF, IIIF, ArcGIS REST, …
 
 ---
 layout: center
@@ -108,11 +104,103 @@ layout: center
 zoom: 1.5
 ---
 
+# Styles
 
-# Flat styles
+```js
+(feature) => new Style({
+  text: new Text({
+    font: '13px Calibri,sans-serif',
+    text: feature.get('name'),
+    placement: 'line',
+    fill: new Fill({
+      color: 'black'
+    }),
+    stroke: new Stroke({
+      color: 'white',
+      width: 2
+    })
+  })
+})
+```
 
-* <span style="text-decoration: darkgray line-through">`WebGLStyle`</span> => *`FlatStyle`*
-* weniger `new Style(…)` … => *`FlatStyle`*
+---
+layout: center
+zoom: 1.5
+---
+
+Vektor Tiles mit ol-mapbox-style, 1 Zeile Code
+
+```js
+apply('map', 'https://tiles.openfreemap.org/styles/liberty');
+```
+
+![Komplexe Karte aus einem Mapbox Style](./vectortile.png "Komplexe Karte aus einem Mapbox Style")
+
+---
+layout: center
+zoom: 1.5
+---
+
+# Flat Styles
+
+```js
+{
+  'text-font': '13px Calibri,sans-serif',
+  'text-value': ['get', 'name'],
+  'text-placement': 'line',
+  'text-fill-color': 'black',
+  'text-stroke-color': 'white',
+  'text-stroke-width': 2
+}
+
+```
+
+---
+layout: center
+zoom: 1.5
+---
+
+# Flat Styles
+
+Auch für Raster 🚀
+
+```js
+const elevation = [
+  '+',
+  -10000,
+  ['*', 0.1 * 255 * 256 * 256, ['band', 1]],
+  ['*', 0.1 * 255 * 256, ['band', 2]],
+  ['*', 0.1 * 255, ['band', 3]],
+];
+const style = {
+  color: [
+    'case',
+    ['<=', elevation, 3],
+    [139, 212, 255, 1],
+    [0, 0, 0, 0],
+  ],
+}
+```
+
+---
+layout: center
+zoom: 1.5
+---
+
+Raster Style - Meeresspiegel +3 m
+
+![Küstenline bei Merresspiegel +3 m](./raster-style.png "Küstenline bei Merresspiegel +3 m")
+
+---
+layout: center
+zoom: 1.5
+---
+
+Raster ohne Style - Höhenmodell in R, G, B codiert
+
+![Höhenmodell in PNG](./raster-no-style.png "Höhenmodell in PNG")
+
+
 ---
 layout: center
 zoom: 1.5
