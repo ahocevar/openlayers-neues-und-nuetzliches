@@ -7,7 +7,7 @@ favicon: https://openlayers.org/theme/img/logo-light.svg
 
 # OpenLayers
 
-<center><img src="./ol.svg" height="300"/></center>
+<center><img src="/ol.svg" height="300"/></center>
 
 Neues und Nützliches
 
@@ -57,7 +57,7 @@ zoom: 1.5
 
 ## Resultat (im Browser)
 
-![Eine OpenLayers Applikation mit einer Weltkarte basierend auf den OpenStreetMap Daten](./first-app.png "Eine OpenLayers Applikation als Startpunkt für weitere Entwicklungen")
+![Eine OpenLayers Applikation mit einer Weltkarte basierend auf den OpenStreetMap Daten](/first-app.png "Eine OpenLayers Applikation als Startpunkt für weitere Entwicklungen")
 
 ---
 layout: center
@@ -77,7 +77,7 @@ zoom: 1.5
 
 SentinelHub inkl. Processing API
 
-![Nutzung von SentinelHub inklusive Processing API](./sentinel-hub.png "Nutzung von SentinelHub inklusive Processing API")
+![Nutzung von SentinelHub inklusive Processing API](/sentinel-hub.png "Nutzung von SentinelHub inklusive Processing API")
 
 ---
 layout: center
@@ -97,7 +97,7 @@ zoom: 1.5
 
 STAC inkl. Reprojection, weniger als 5 Zeilen Code
 
-![Nutzung von STAC innerhalb einer OpenLayers Applikation](./stac.png "Nutzung von STAC innerhalb einer OpenLayers Applikation")
+![Nutzung von STAC innerhalb einer OpenLayers Applikation](/stac.png "Nutzung von STAC innerhalb einer OpenLayers Applikation")
 
 ---
 layout: center
@@ -134,7 +134,7 @@ Vektor Tiles mit ol-mapbox-style, 1 Zeile Code
 apply('map', 'https://tiles.openfreemap.org/styles/liberty');
 ```
 
-![Komplexe Karte aus einem Mapbox Style](./vectortile.png "Komplexe Karte aus einem Mapbox Style")
+![Komplexe Karte aus einem Mapbox Style](/vectortile.png "Komplexe Karte aus einem Mapbox Style")
 
 ---
 layout: center
@@ -189,7 +189,7 @@ zoom: 1.5
 
 Raster Style - Meeresspiegel +3 m
 
-![Küstenline bei Merresspiegel +3 m](./raster-style.png "Küstenline bei Merresspiegel +3 m")
+![Küstenline bei Merresspiegel +3 m](/raster-style.png "Küstenline bei Merresspiegel +3 m")
 
 ---
 layout: center
@@ -198,7 +198,7 @@ zoom: 1.5
 
 Raster ohne Style - Höhenmodell in R, G, B codiert
 
-![Höhenmodell in PNG](./raster-no-style.png "Höhenmodell in PNG")
+![Höhenmodell in PNG](/raster-no-style.png "Höhenmodell in PNG")
 
 
 ---
