@@ -174,8 +174,7 @@ const elevation = [
 ];
 const style = {
   color: [
-    'case',
-    ['<=', elevation, 3],
+    'case', ['<=', elevation, 3],
     [139, 212, 255, 1],
     [0, 0, 0, 0],
   ],
