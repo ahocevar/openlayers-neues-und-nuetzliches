@@ -207,6 +207,11 @@ zoom: 1.5
 
 # Future: keine barrel files mehr
 
+```js
+import { Map as BarrelImportedMap } from 'ol';
+import ModuleImportedMap from 'ol/Map'; // künftig nur noch so
+```
+
 * "A barrel is a file that does nothing but re-export things from other files"
 * bessere dev-experience
 * kleinere builds
