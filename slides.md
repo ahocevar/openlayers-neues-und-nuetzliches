@@ -216,7 +216,12 @@ import ModuleImportedMap from 'ol/Map'; // künftig nur noch so
 * bessere dev-experience
 * kleinere builds
 * Codemod: https://www.npmjs.com/package/@openlayers/codemod
+
 ---
 layout: center
 zoom: 1.5
 ---
+
+https://openlayers.org/
+
+https://github.com/openlayers/openlayers/
